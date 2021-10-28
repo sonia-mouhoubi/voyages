@@ -1,0 +1,447 @@
+* {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    margin: 0 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    width: 100vw;
+    position: relative;
+}
+
+.continent {
+    margin-top: 10px;
+}
+
+
+
+
+nav {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 0%;
+    overflow: hidden;
+    transition: all 330ms ease-in-out;
+    height: 100vh;
+    opacity: 0;
+    font-size: 25px;
+    color: black;
+    font-weight: 900;
+    z-index: 10;
+}
+
+li {
+    list-style: none;
+    padding: 10px 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6%;
+}
+
+
+.paysderoulantal,
+.paysderoulantam,
+.paysderoulantas,
+.paysderoulantel,
+.paysderoulantem,
+.paysderoulantes,
+.nomderoulante, 
+.nomderoulanta 
+{
+    opacity: 0;
+    transition: all 330ms ease-in-out;
+
+}
+
+#btnnav {
+    position: absolute;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.555);
+}
+
+#btnnav[type="checkbox"]:checked ~	nav {
+    width: 30%;
+    height: 100vh;
+    opacity: 1;
+}
+
+#btnasie[type="checkbox"]:checked ~	.nomderoulanta,
+#btneurope[type="checkbox"]:checked ~	.nomderoulante,
+#btnluciena[type="checkbox"]:checked ~	.paysderoulantal,
+#btnmeriema[type="checkbox"]:checked ~	.paysderoulantam,
+#btnsoniaa[type="checkbox"]:checked ~	.paysderoulantas,
+#btnluciene[type="checkbox"]:checked ~	.paysderoulantel,
+#btnmerieme[type="checkbox"]:checked ~	.paysderoulantem,
+#btnsoniae[type="checkbox"]:checked ~	.paysderoulantes
+
+
+{
+    opacity: 1;
+}
+
+i {
+    transform: rotate(-90deg);
+    transition: all 330ms ease;
+}
+
+input[type="checkbox"]:checked + label i {
+    transform: rotate(0deg);
+}
+
+
+section#premierepage {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+        
+}
+
+.mosaique {
+    transition: all 330ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 40vh;
+    margin: auto auto;
+    
+}
+
+.mosaique:hover {
+    transform: scale(0.9);
+    filter: blur(0px);
+}
+
+.mosaique:hover > .photocover {
+    filter: blur(0px);
+}
+
+.titrecover:hover::after {
+    width: 100%;
+}
+
+.titrecover:hover{
+    transform: scale(1.2);
+      
+
+}
+.photocover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    filter: blur(2px);
+    transition: all 330ms ease-in-out;
+
+}
+
+.titrecover {
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    padding: 1vh 1vw;
+    z-index: 2;
+    transition: all 330ms ease-in-out;
+}
+    .titrecover::after {
+    left: 0;
+    content: "";
+    position: absolute;
+    border-bottom: 3px solid white;
+    width: 0%;
+    bottom: 0;
+    transition: all 330ms ease-in-out ;
+    
+
+    }
+
+
+#background1 {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+#video1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: blur 2s linear;
+    filter: blur(2px);
+}
+
+#titrevideo {
+    position: absolute;
+    color: white;
+    animation: titre 3s linear;
+    font-size: 50px;
+    padding: 1vh 1vw;
+    top: 40vh;
+    left: 10vw;
+    opacity: 100;
+}
+
+#titrevideo::after {
+    left: 0;
+    content: "";
+    position: absolute;
+    border-bottom: 3px solid white;
+    width: 100%;
+    bottom: 0px;
+    animation: souligné 2s linear;
+}
+
+.titrecover2 {
+    background-color: rgba(7, 7, 7, 0.356);
+    border-radius: 10px;
+    padding: 30px 50vw;
+    color: white;
+    font-size: 50px;
+    transition: all 330ms ease-in-out;
+
+}
+
+@keyframes titre {
+    from {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 100;
+    }
+}
+
+@keyframes blur {
+    from {
+        filter: blur(0);
+    }
+    to {
+        filter: blur(2px);
+    }
+}
+
+@keyframes souligné {
+    from {
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+section#deuxiemepage, section#troisiemepage {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photoattache {
+    width: 100%;
+    height: 50vh;
+    background-image: url(../img/akihabara.jpg);
+    background-size: contain;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#troisiemepage .photoattache {
+    background-image: url(../img/shibuya.jpg);
+    background-size: cover;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 1.7em;
+    
+    
+}
+
+.textedesc {
+    margin: 5% 10%;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: grey;
+    text-align: justify;
+    transition: all 330ms ease-in-out;
+}
+
+#sommaire, table {
+    margin: auto 10%;
+
+}
+
+table {
+    padding: 2% 2%;
+    margin-bottom: 5%;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  -20px 20px 60px #bebebe,
+                20px -20px 60px #ffffff;
+}
+
+th, td {
+    padding: 0.3em;
+} 
+
+#mosaiqueb {
+    width: 100%;
+    background-color: gray;
+    height: 50vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    gap: 2%;
+
+}
+
+#mosaiqueb div:nth-child(1n+1){
+    padding: 25vh 35vw;
+    animation: caroussel 50s ease-in-out alternate infinite;
+    background-size: cover;
+}
+
+#deuxiemepage #mosaiqueb div:nth-child(1) {
+    background-image: url(../img/akihabara.jpg);
+}
+
+#deuxiemepage #mosaiqueb div:nth-child(2) {
+    background-image: url(../img/akihabara1.jpg);
+}
+
+#deuxiemepage #mosaiqueb div:nth-child(3) {
+    background-image: url(../img/akihabara2.jpg);
+}
+
+#deuxiemepage #mosaiqueb div:nth-child(4) {
+    background-image: url(../img/akihabara3.jpg);
+}
+
+#deuxiemepage #mosaiqueb div:nth-child(5) {
+    background-image: url(../img/akihabara4.jpg);
+}
+
+#deuxiemepage #mosaiqueb div:nth-child(6) {
+    background-image: url(../img/akihabara5.jpg);
+}
+
+#deuxiemepage #mosaiqueb div:nth-child(7) {
+    background-image: url(../img/akihabara.jpg);
+}
+
+#troisiemepage #mosaiqueb div:nth-child(1) {
+    background-image: url(../img/shibuya.jpg);
+}
+
+#troisiemepage #mosaiqueb div:nth-child(2) {
+    background-image: url(../img/shibuya1.jpg);
+}
+
+#troisiemepage #mosaiqueb div:nth-child(3) {
+    background-image: url(../img/shibuya2.jpg);
+}
+
+#troisiemepage #mosaiqueb div:nth-child(4) {
+    background-image: url(../img/shibuya3.jpg);
+}
+
+#troisiemepage  #mosaiqueb div:nth-child(5) {
+    background-image: url(../img/shibuya4.jpg);
+}
+
+#troisiemepage #mosaiqueb div:nth-child(6) {
+    background-image: url(../img/shibuya5.jpg);
+}
+
+#troisiemepage #mosaiqueb div:nth-child(7) {
+    background-image: url(../img/shibuya.jpg);
+}
+
+@keyframes caroussel {
+    from {
+        transform: translate(0%);
+    }
+    to {
+        transform: translate(-612%);
+    }
+}
+
+.textedesc:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    box-shadow: none;
+}
+
+footer table {
+    width: 100%;
+    box-shadow: none;
+    background-color: black;
+}
+
+footer table th,
+footer table td {
+    text-align: center;
+    transition: all 330ms ease-in-out;
+}
+
+footer table th {
+    font-size: 1.4em;
+    font-weight: 800;
+    padding: 0.5em;
+}
+
+footer table td:nth-child(1),
+footer table td:nth-child(2)
+ {
+    border-right: 1px solid wheat;    
+}
+
+footer table td:hover {
+    font-size: 1.5em;
+}
+

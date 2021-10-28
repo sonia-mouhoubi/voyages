@@ -1,0 +1,464 @@
+* {
+	box-sizing : border-box;
+}
+body {
+    scroll-behavior: smooth;
+    line-height: 1.15;
+	margin : 0;
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 1.2em;
+}
+main {
+	margin : 0;	
+}
+section {
+    overflow : hidden;
+}
+h1 {
+    font-family: 'Dancing Script', cursive;
+    text-align : center;
+    font-size: 2.5em;
+}
+h2, h3, h4, h5 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    text-align: center;
+    padding: 1em;
+    color: #f20e30;
+    transform: rotate(-5deg);
+}
+p {
+    padding: 1em;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin: 0;
+    list-style: none;
+}
+img {display: block;
+	max-width: 100%;
+    margin: 1em auto;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 1px 0px 15px 5px rgba(0,0,0,0); 
+    cursor: pointer;
+}
+a {
+	text-decoration : none;
+	font-weight : bold;
+	color : black;
+}
+a:hover {
+    color: slategrey;
+}
+
+/*================================================ HEADER ==================================================*/
+header {
+    background-image: linear-gradient(rgba(252, 243, 207, 0.50), rgba(252, 243, 207, 0.50)),url(../img/couleur.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+}
+
+/*================================================ LOGO  */
+.logo2 {
+    display: block;
+    width: 100vw;
+    color:white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    text-align: center;
+    opacity: 0;
+    animation: logo 3s 5s forwards;
+}
+@keyframes logo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+/*================================================ MENU BURGER  */
+.menu-icon {
+    z-index: 10;
+    position: relative;
+    top : 2em;
+    left : 1.5em;
+}
+.menu-icon span {
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 7px;
+    background-color : #f20e30;
+    border-radius: 25px;
+}
+.menu-icon :nth-child(1) {
+    transform: translateY(10px);
+}
+.menu-icon :nth-child(2) {
+    transform: translateY(-10px);
+}
+#toggle[type="checkbox"]:checked ~ .menu-icon :nth-child(1) {
+    transform: rotate(45deg);
+}
+#toggle[type="checkbox"]:checked ~ .menu-icon :nth-child(2) {
+    transform: rotate(-45deg);
+}
+#toggle[type="checkbox"]:checked ~ .menu-icon :nth-child(3) {
+    display: none;
+}
+.menu-icon :nth-child(1), .menu-icon :nth-child(2) {
+    transition: all 330ms;
+}
+/*================================================ NAVIGATION  */
+.nav2 {
+	width : 0;
+    background-color:whitesmoke; 
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 28%);
+    text-align: center;
+    overflow : hidden;
+    animation-name: nav;
+    transition: all 330ms ease-in-out;
+    animation-duration: 5s;
+}
+@keyframes nav {
+    0% {
+        margin-left: -100%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+.nav2 a:hover {
+    color: #614e1a;
+}
+#toggle[type="checkbox"]:checked ~ nav {
+    width: 100%;
+
+}
+.ul-container {
+    display: flex;
+    flex-direction: row;
+    background-color:whitesmoke; 
+    width: 100%;
+    padding : 1em;
+}
+.ul-container li {
+    text-align: center;
+    width: 100%;
+}
+
+/* MENU DEROULANT  */
+.deroulant {
+    padding: 1em 0;
+    display: flex;
+    height: auto;
+    display: none;
+}
+.deroulant li {
+    padding: 1em;
+}
+.deroulant a {
+    color: #dfaf2c;
+}
+.nav2 > ul li:hover .deroulant{
+    display: block;
+}
+/*Sous-menu*/
+.sous-menu {
+    display: none;
+}
+.deroulant li:hover .sous-menu {
+    display: block;
+}
+.sous-menu a {
+    color: #e8c464;
+}
+
+/*================================================ MAIN ==================================================*/
+/*================================================ SECTION PRESENTATION */
+.presentation p {
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 5em;
+    margin-left : auto;
+    margin-right: auto;
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    background-color: indigo;
+    color: white;
+    font-size: 0.9em;
+    text-align: justify;   
+    animation: bounce 1s ease infinite;
+}
+@keyframes bounce{
+    from {top: 2em;}
+    50%  {top: 1.5em;}
+    to   {top: 2em;}
+}
+
+/*ANIMATION SLIDER*/
+div#slider { 
+    width: 80%; 
+    max-width: 1000px; 
+    height: 25vh;
+    overflow: hidden;
+    margin: auto;
+    border: solid 10px indigo;
+} 
+div#slider figure {
+    position: relative; /*relative permet à la figure d’être déplacée facilement durant l'animation*/
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;/*La font-size: 0 aspire l’air autout de l’élément*/
+    text-align: left; /*Répare le bug de Safari*/
+    animation: 30s slidy infinite;
+}
+div#slider figure img { 
+    width: 20%; 
+    height: auto; 
+    float: left; /*Permet de corriger un bug de Win Safari 5).*/
+}
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+
+/*================================================ SECTION REPAS */
+.repas:hover {
+    background-color: #FCF3D1;
+    animation: repas 5s forwards;
+}
+@keyframes repas {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: #FCF3D1;
+    }
+    100% {
+        background-color: #FEF0BB;
+    }
+}
+.repas img {
+    animation : pulse 2s infinite;
+    animation-fill-mode: both;
+}
+@keyframes pulse {
+    0% {
+    transform: scale3d(1, 1, 1);
+    }
+    50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+    }
+    100% {
+    transform: scale3d(1, 1, 1);
+    }
+}
+
+.tenue img:hover {
+    transform-origin: top center;
+    animation-name: swing;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    }
+    @keyframes swing {
+    20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+    }
+    40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+    }
+    60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+    }
+    80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+    }
+    100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+/*================================================ SECTION TARIF */
+.tarif {
+    padding-bottom : 2em;
+}
+.tarif table {
+    padding: 1em 0.5em;
+    margin: auto;
+    background-color: #c8b351;
+    border-collapse:collapse;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 1px 0px 15px 5px rgba(0,0,0,0); 
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 1px 0px 15px 5px rgba(0,0,0,0);    
+}
+.tarif td {
+    padding: 0.5em;
+    border: solid whitesmoke;  
+}
+.tarif td {
+    background-color: white;
+    text-align: center;
+}
+
+/*================================================ SECTION FORMULAIRE  */
+.formulaire {
+    background-image: linear-gradient(rgba(252, 243, 207, 0.50), rgba(252, 243, 207, 0.50)),url(../img/taj_mahal.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.formulaire form {
+    background-color: #c8b351;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 1px 0px 15px 5px rgba(0,0,0,0); 
+    padding: 1em;
+    margin: 0 auto 1em auto;
+    text-align: center;
+}
+.formulaire label, input, textarea {
+    width: 90%;
+    margin: 1em;
+}
+
+
+/*====================================================================== VERSION DESKTOP ==================================================*/
+/*======================================================================                 ==================================================*/
+/*====================================================================== VERSION DESKTOP ==================================================*/
+@media screen and (min-width: 1024px){
+    img {
+        display: inline;
+    }
+/*================================================ HEADER ==================================================*/
+    header {
+        height: 100vh;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap : wrap;
+        background-attachment: fixed;
+    }
+    header h1 {
+        text-align: end;
+        padding-right: 2em;
+        margin-top: 2em;
+        flex-basis: 100%;
+    }
+    header p {
+        background-color:white;
+        padding-left: 50%;
+        position: relative;
+    }
+    header img {
+        z-index: 10;
+        width: 40%;
+        margin-left: 4em;
+        position: absolute;
+        top : 11rem;
+        margin-left: -100em;
+        animation: header-img 5s forwards;
+    }
+    @keyframes header-img {
+        0% {
+            margin-left: -100em;
+        }
+        100% {
+            margin-left: 4em;
+        }
+    }
+    
+/*================================================ LOGO  */
+    .logo2 {
+        width: 20%;
+        height: 10%;
+        padding : 0.5em;
+        font-size: 3em;
+    }
+/*================================================ NAVIGATION  */
+    .menu-icon {
+        display: none;
+    }
+    .nav2 {
+        width: 70%;    
+        z-index: 11;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+/*================================================ MAIN ==================================================*/
+/*================================================ SECTION PRESENTATION */
+    .presentation {
+        position: relative;
+        margin-bottom: 2em;
+    }
+    .presentation p {
+        position: absolute;
+        left: 1em;
+        top : 1em;
+        z-index: 15;
+    }
+    div#slider { 
+        height: 75vh;
+    }
+/*================================================ SECTION REPAS */
+    .repas {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 3em;
+    }
+    .repas p {
+        margin: 2em;
+        padding: 2em 5em;
+        flex-basis: 70%;
+    }
+    .repas figure {
+        width: 25%;
+        height: 100%;
+        margin: 1em auto;
+        background-color: indigo;
+    
+    }
+    .repas figcaption {
+        width: 80%;
+        margin: auto;
+        padding: 1em;
+        margin-bottom: -2em;
+        background-color:rgb(9, 0, 15);
+        color: lightgray;
+        border-radius: 50px;
+    }
+    .repas img {
+        margin-left: -1em;
+        margin-top: -1em;
+    }
+
+/*================================================ SECTION TENUE */
+    .tenue {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 3em;
+    }
+    .tenue figure {
+        width: 40vh;
+        height: 40vh;
+        margin: 1em;
+    }
+  
+/*================================================ SECTION FORMULAIRE */
+    form {
+        width: 50%;
+    }
+}

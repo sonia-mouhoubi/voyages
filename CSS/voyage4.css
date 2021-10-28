@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    padding: 0;
+}
+
+a{
+    color: currentColor;
+}
+
+body {
+    margin: 0 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#background {
+    background-image: url(../img/venise.jpg);
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    z-index: -10;
+    width: 100vw;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+i {
+    position: absolute;
+    color: black(107, 73, 73);
+    top: 20px;
+    animation : rebond 3s infinite ease-in-out; 
+    transition: 330ms ease-in-out;
+    transform: scale(1.2);
+    z-index: 999;
+}
+
+@keyframes rebond {
+    0% {
+        transform: translatey(0);
+    }
+    25% {
+        transform: translatey(-20px);
+    }
+    50% {
+        transform: translatey(0px);
+    }
+    75% {
+        transform: translatey(-20px);
+    }
+
+    99% {
+        transform: translatey(0px);
+    }
+    
+}
+
+.navitem {
+    color: white;
+    font-size: 30px;
+    padding: 1em 1em;
+    transition: all 330ms ease-in-out;
+    position: relative;
+    transform: translateY(-100px);
+}
+
+nav:hover > span.navitem {
+    transform: translateY(0px);
+
+}
+
+nav:hover > i 
+{
+    opacity: 0;
+}
+
+
+
+section#premierepage {
+    background-color: black;
+    transition: all 1s ease-in-out;
+
+}
+
+#premierepage:hover {
+    background-color: whitesmoke;
+}
+
+#titre {
+    color: white;
+    font-size: 4em;
+    letter-spacing: 0.2em;
+    text-align: center;
+    animation: titre 1s ease-in-out; 
+}
+
+#description {
+    color: white;
+    width: 35vh;
+    font-size: 1.2em;
+    text-align: justify;
+    transform: translateX(25%);
+    animation: titre 1s ease-in-out; 
+
+}
+
+@keyframes titre {
+    from {
+        opacity: 0;
+        transform: translate(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: (0);
+    }
+}
+
+
+
+#premierepage article h1,
+#deuxiemepage article h1,
+#troisiempage article h1
+ 
+{
+    text-align: center;
+    font-size: 4em;
+    text-align: center;
+    padding: 1em;
+    color: black;
+
+}
+
+article {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+#entt {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#btn {
+    margin: auto 10%;
+    text-align: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    width: 19%;
+    font-size: 1em;
+    transition: all 1s ease-in-out;
+    box-shadow: 5px 2px 2px darkgray;
+}
+
+#btn:active {
+    transform: scale(0.8);
+}
+
+#btn:hover {
+    background-color: grey;
+}
+
+#activite {
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    margin: 0 5%;
+    flex-wrap: wrap;
+    height: 90vh;
+}
+
+#activite > div {
+    width: 30%;
+    height: 40%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 330ms ease-in-out;
+    position: relative;
+    box-shadow: 5px 2px 2px darkgray;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+}
+
+#activite div:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 5px 5px gray;
+
+}
+
+.textdesc div img
+ {
+    height: 100%;
+    width: 100%;
+    transition: all 330ms ease-in-out;
+    border-radius: 10px;
+}
+
+.textdesc div img:hover {
+    transform: scale(1.1);
+}
+
+.textdesc p {
+    width: 40%;
+    text-align: justify;
+}
+
+.textdesc {
+    display: flex;
+    justify-content: space-evenly;
+    align-content:center;
+    height: 40vh;
+    margin: 2% 10%;
+
+}
+
+.inv {
+    flex-direction: row-reverse;
+}
+
+#activite div h2 {
+    position: absolute;
+    color: white;
+    font-size: 3em;
+    text-align: center;
+
+}
+
+#deuxiemepage:hover {
+    background-color: whitesmoke;
+}
+
+#deuxiemepage {
+    background-color: black;
+    transition: all 1s ease-in-out;
+    
+}
+
+.titretexte {
+    display: block;
+    margin-bottom: 5%;
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+#troisiempage {
+    background-color: black;
+    transition: all 1s ease-in-out;
+}
+
+#troisiempage:hover {
+    background-color: whitesmoke;
+}
+
+#carte {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+footer table {
+    width: 100%;
+}
+
+footer table th,
+footer table td {
+    text-align: center;
+    transition: all 330ms ease-in-out;
+}
+
+footer table th {
+    font-size: 1.4em;
+    font-weight: 800;
+    padding: 0.5em;
+}
+
+footer table td:nth-child(1),
+footer table td:nth-child(2)
+ {
+    border-right: 1px solid wheat;    
+}
+
+footer table td:hover {
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
