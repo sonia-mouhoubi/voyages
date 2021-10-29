@@ -27,7 +27,7 @@ header {
 }
 
 
-#background {
+#background4 {
     background-image: url(../img/venise.jpg);
     position: absolute;
     top: 0;
@@ -37,7 +37,7 @@ header {
     height: 100vh;
 }
 
-nav {
+#nav8 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,7 +152,7 @@ section#premierepage {
 
 }
 
-article {
+.art3 {
     display: flex;
     width: 100%;
     flex-direction: column;
